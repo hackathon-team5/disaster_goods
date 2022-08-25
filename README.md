@@ -1,24 +1,44 @@
-# README
+# (仮)防災グッズアプリ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# サービス概要
 
-Things you may want to cover:
+都内居住地の災害危険度を火災・震災・活動困難度でランク毎にチャート化し、
+総合危険度と最も危険度が高かった災害に合わせて、
+防災グッズを提案するアプリ
 
-* Ruby version
+# メインのターゲットユーザー
 
-* System dependencies
+- 都内居住地の災害危険度を知りたい人
+- どんな防災グッズを揃えたいか知りたい人
 
-* Configuration
+# 行政(ユーザー)が抱える課題
 
-* Database creation
+災害に関して備蓄が必要だと分かっていても、何を揃えればいいかわからない
+特にどんな災害危険度があるかわからない為、何を揃えておくのが一番いいかわからない
 
-* Database initialization
+# 解決方法
 
-* How to run the test suite
+1. 都内居住地の情報を入れる
+2. 災害危険度と防災グッズの提案が出てくる
 
-* Services (job queues, cache servers, search engines, etc.)
+# 実装予定の機能
 
-* Deployment instructions
+- 都内居住地の災害危険度(火災・震災・活動困難度)をランク毎にチャート化
+- 総合危険度をランク化、最も危険度が高い災害の表示
+- 最も危険度が高い災害に合わせて防災グッズの提案
 
-* ...
+# なぜこのアプリを作りたいか
+
+災害対策アプリは多々あるが、災害危険度と防災グッズを知ることで、防災意識を高められるようにしたい
+
+# スケジュール
+
+README〜ER図作成：8/22 〆切
+メイン機能実装：8/22 - 9/3
+β版をRUNTEQ内リリース（MVP）：9/4
+
+# 画面遷移図
+https://www.figma.com/file/88cl1FqC5nEYDbQOOyhlF4/%E3%83%8F%E3%83%83%E3%82%AB%E3%82%BD%E3%83%B3%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3%EF%BC%88%E3%83%89%E3%83%A9%E3%83%95%E3%83%88%EF%BC%89
+
+# ER図
+[![Image from Gyazo](https://i.gyazo.com/1e8b22df8ebb8315606195563cbc8993.jpg)](https://gyazo.com/1e8b22df8ebb8315606195563cbc8993)
