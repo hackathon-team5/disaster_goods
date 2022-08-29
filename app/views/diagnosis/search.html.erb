@@ -1,0 +1,16 @@
+<div class="container pt-4">
+  <%= form_with url: result_path, method: :get, local: true do |f| %>
+    <div class="form-group">
+      <%= f.label :district, "区市町名" %>
+      <%= f.select :id , @districts.map{ |district| [district.name, district.id] }, {include_blank: "選択してください"}, class: "form-control" %>
+    </div>
+
+    <div class="form-group mt-3">
+      <%= f.label :town, "町丁目名" %>
+      <%= f.select :town_id, @towns.map{ |town| [town.name, town.id] }, { include_blank: '選択してください' }, class: "form-control" %>
+    </div>
+    <div class="actions text-center mt-5">
+      <%= f.submit "診断する", class: "btn btn-outline-dark" %>
+    </div>
+  <% end %>
+</div>
