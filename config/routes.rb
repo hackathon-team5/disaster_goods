@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
   root 'static_pages#top'
-  get '/diagnose' => 'pages#diagnose'
+
+  resources :diagnoses, only: %i[index]
 end
