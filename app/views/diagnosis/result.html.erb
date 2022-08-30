@@ -4,7 +4,7 @@
     <h3>建物崩壊危険度：<%= @rank.building_collapse_rank %></h3>
     <h3>活動困難度：<%= @rank.active_difficulty_rank %></h3>
   </div>
-  <div style="position: relavetive; height: 60vh; width: 100vh;">
+  <div style="position: relative; height: 60vh; width: 50vh;">
     <canvas id="myChart"></canvas>
   <div>
 </div>
@@ -30,8 +30,22 @@ const ctx = document.getElementById('myChart').getContext('2d');
       }]
     },
     options: {
+      plugins: {
+        legend: {
+          labels: {
+            font: {
+              size: 18
+            }
+          }
+        }
+      },
       scales: {
         r: {
+          ticks: {
+            autoSkip: false,
+            max: 5,
+            stepSize: 1
+          },
           // グラフの最小値・最大値
           min: 0,
           max: 5,
@@ -48,6 +62,9 @@ const ctx = document.getElementById('myChart').getContext('2d');
           // 各項目のラベル
           pointLabels: {
             color: 'black',
+            font: {
+              size: 16
+            }
           },
         },
       },
