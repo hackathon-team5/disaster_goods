@@ -1,5 +1,73 @@
-<div class="container">
-  <h3>火災危険度：<%= @rank.fire_danger_rank %></h3>
-  <h3>建物崩壊危険度：<%= @rank.building_collapse_rank %></h3>
-  <h3>活動困難度：<%= @rank.active_difficulty_rank %></h3>
+<div>
+  <div class="container">
+    <h3>火災危険度：<%= @rank.fire_danger_rank %></h3>
+    <h3>建物崩壊危険度：<%= @rank.building_collapse_rank %></h3>
+    <h3>活動困難度：<%= @rank.active_difficulty_rank %></h3>
+  </div>
+  <div style="position: relative; height: 60vh; width: 50vh;">
+    <canvas id="myChart"></canvas>
+  <div>
 </div>
+
+<script>
+const ctx = document.getElementById('myChart').getContext('2d');
+  const myChart = new Chart(ctx, {
+    type: 'radar',
+    data: {
+      labels: ['建物倒壊危険度', '火災危険度', '災害時困難危険度'],
+      datasets: [{
+        label: '危険度グラフ',
+        data: [
+          <%= @fire_danger_rank %>,
+          <%= @building_collapse_rank %>,
+          <%= @active_difficulty_rank %>
+        ],
+        // グラフを塗りつぶすかどうか。初期値はtrue。
+        fill: true,
+        backgroundColor: ['rgba(255, 99, 132, 0.2)'],
+        borderColor: ['rgba(255, 99, 132, 1)'],
+        borderWidth: 2
+      }]
+    },
+    options: {
+      plugins: {
+        legend: {
+          labels: {
+            font: {
+              size: 18
+            }
+          }
+        }
+      },
+      scales: {
+        r: {
+          ticks: {
+            autoSkip: false,
+            max: 5,
+            stepSize: 1
+          },
+          // グラフの最小値・最大値
+          min: 0,
+          max: 5,
+          // 背景色
+          backgroundColor: 'snow',
+          // グリッドライン
+          grid: {
+            // color: 'gray',
+          },
+          // アングルライン
+          angleLines: {
+            color: 'red',
+          },
+          // 各項目のラベル
+          pointLabels: {
+            color: 'black',
+            font: {
+              size: 16
+            }
+          },
+        },
+      },
+    },
+  })
+</script>
