@@ -1,4 +1,6 @@
 class DiagnosisController < ApplicationController
+  include Common
+
   def search
     @districts = District.all
     @towns = Town.all
@@ -9,9 +11,9 @@ class DiagnosisController < ApplicationController
     @fire_danger_rank = @rank.fire_danger_rank.to_json.html_safe
     @building_collapse_rank = @rank.building_collapse_rank.to_json.html_safe
     @active_difficulty_rank = @rank.active_difficulty_rank.to_json.html_safe
-    
     danger_list = [ @fire_danger_rank, @building_collapse_rank, @active_difficulty_rank]
     priority_list = [['fire', @fire_danger_rank], ['building', @building_collapse_rank], ['active', @active_difficulty_rank]]
+    # 下２行のメソッドは、app/controller/concerns/common.rbで定義している。
     priority_count = equal_count(danger_list)
     priority_ranks = rank_types(priority_list, priority_count)
     @types_id = if (priority_count == 1) && (priority_ranks == ['fire'])
@@ -29,29 +31,5 @@ class DiagnosisController < ApplicationController
                 elsif priority_count == 3
                   7
                 end
-  end
-
-  private
-
-  def equal_count(danger_list)
-    danger_list.sort! {|x,y| y<=>x}
-    priority_count = 1
-    (danger_list.length - 1).times do |n|
-      if danger_list[n] == danger_list[n + 1]
-        priority_count += 1
-      else
-        break
-      end
-    end
-    priority_count
-  end
-
-  def rank_types(priority_list, priority_count)
-    priority_list.sort! { |x,y| y[1]<=>x[1] }
-    priority_disaster = []
-    priority_list.first(priority_count).each do |n| 
-      priority_disaster << n[0]
-    end
-    priority_disaster
   end
 end
