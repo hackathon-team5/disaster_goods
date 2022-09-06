@@ -11,7 +11,7 @@ class DiagnosisController < ApplicationController
     @fire_danger_rank = @rank.fire_danger_rank.to_json.html_safe
     @building_collapse_rank = @rank.building_collapse_rank.to_json.html_safe
     @active_difficulty_rank = @rank.active_difficulty_rank.to_json.html_safe
-    danger_list = [ @fire_danger_rank, @building_collapse_rank, @active_difficulty_rank]
+    danger_list = [@fire_danger_rank, @building_collapse_rank, @active_difficulty_rank]
     priority_list = [['fire', @fire_danger_rank], ['building', @building_collapse_rank], ['active', @active_difficulty_rank]]
     # 下２行のメソッドは、app/controller/concerns/common.rbで定義している。
     priority_count = equal_count(danger_list)
