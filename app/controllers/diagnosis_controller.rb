@@ -10,4 +10,10 @@ class DiagnosisController < ApplicationController
     @building_collapse_rank = @rank.building_collapse_rank.to_json.html_safe
     @active_difficulty_rank = @rank.active_difficulty_rank.to_json.html_safe
   end
+
+  def rakuten
+    if params[:itemCode]
+      @items = RakutenWebService::Ichiba::Item.search(itemCode: params[:itemCode])
+    end
+  end
 end

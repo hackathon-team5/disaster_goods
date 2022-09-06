@@ -1,0 +1,25 @@
+<%= form_tag :rakuten, method: :get do  %>
+<%= label_tag :itemCode, 'キーワード検索' %>
+<%= text_field_tag 'itemCode', params[:itemCode] %>
+<%= submit_tag "検索" %>
+<% end %>
+<table>
+<thead>
+<tr>
+<th>商品名</th>
+<th>価格</th>
+<th>画像</th>
+</tr>
+</thead>
+<tbody>
+<% if @items.present? %>
+  <% @items.each do |item| %>
+  <tr>
+    <img src="<%= item['smallImageUrls'][0] %>">
+    <a href="<%= item['itemUrl']%>" target="_blank"><%= item['itemName']%></a>
+    <%= item['itemPrice'] %>円
+  </tr>
+  <% end %>
+<% end %>
+</tbody>
+</table>
