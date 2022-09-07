@@ -3,4 +3,8 @@ Rails.application.routes.draw do
 
   get '/search', to: 'diagnosis#search'
   get '/result', to: 'diagnosis#result'
+
+  resources :districts, only: [] do
+    resources :towns, only: :index
+  end
 end
