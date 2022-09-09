@@ -17,20 +17,20 @@
     </div>
   <% end %>
 </div>
+
 <script>
-  const replaceSelectOptions = ($select, results) => {
-    $select = document.querySelector('.select-children');
-    while($select.firstChild){
-      $select.removeChild($select.firstChild);
+  const replaceSelectOptions = (select, results) => {
+    while(select.firstChild){
+      select.removeChild(select.firstChild);
     }
     const firstSelection = document.createElement('option');
     firstSelection.textContent = '選択してください';
-    $select.appendChild(firstSelection);
-    results.forEach((element)=>{
+    select.appendChild(firstSelection);
+    results.forEach((element) => {
       const option = document.createElement('option');
       option.setAttribute('value',`${element.id}`); 
       option.textContent = element.name;
-      $select.appendChild(option);
+      select.appendChild(option);
     });
   }
 
@@ -38,16 +38,16 @@
     const selectedIndex = document.querySelector('.select-parent').options.selectedIndex;
     const childrenPath = document.querySelector('.select-parent').options[selectedIndex].dataset.childrenPath;
     const $selectChildren = document.querySelector('.select-children');
-    if (childrenPath !== 'undefined'){
+    if (childrenPath !== 'undefined') {
       const xhr = new XMLHttpRequest();
       xhr.open('GET', childrenPath, true);
       xhr.responseType = 'json';
       xhr.send();
       xhr.onreadystatechange = function(){
-        if(xhr.readyState == 4 && xhr.status == 200){
+        if (xhr.readyState == 4 && xhr.status == 200) {
           let results = xhr.response;
           replaceSelectOptions($selectChildren, results); 
-        }else{
+        } else {
           replaceSelectOptions($selectChildren, []);
         }
       }
@@ -55,6 +55,6 @@
   }
   const selectParent = document.querySelector('.select-parent');
   selectParent.onchange = () => {
-      replaceChildrenOptions();
-    }
+    replaceChildrenOptions();
+  }
 </script>
