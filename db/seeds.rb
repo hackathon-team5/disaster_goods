@@ -7,15 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require "csv"
 
-# CSV.foreach('db/district.csv', headers: true) do |row|
-#     District.create(name: row['区市町名'])
-# end
+CSV.foreach('db/district.csv', headers: true) do |row|
+    District.create(name: row['区市町名'])
+end
 
-# CSV.foreach('db/town.csv', headers: true) do |row|
-#     Town.create(
-#         name: row['町丁目名'],
-#         district_id: row['区市町名'])
-# end
+CSV.foreach('db/town.csv', headers: true) do |row|
+    Town.create(
+        name: row['町丁目名'],
+        district_id: row['区市町名'])
+end
 
 # CSV.foreach('db/rank.csv', headers: true) do |row|
 #     Rank.create(
@@ -26,8 +26,8 @@ require "csv"
 #         town_id: row['町丁目名'])
 # end
 
-CSV.foreach('db/type.csv', headers: true) do |row|
-    Type.create(
-        name: row['タイプ名'],
-        description: row['記述'])
-end
+# CSV.foreach('db/type.csv', headers: true) do |row|
+#     Type.create(
+#         name: row['タイプ名'],
+#         description: row['記述'])
+# end
