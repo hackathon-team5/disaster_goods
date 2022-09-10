@@ -2,15 +2,59 @@
   <%= form_with url: result_path, method: :get, local: true do |f| %>
     <div class="form-group">
       <%= f.label :district, "区市町名" %>
-      <%= f.select :id , @districts.map{ |district| [district.name, district.id] }, {include_blank: "選択してください"}, class: "form-control" %>
+      <% district_category = @districts.order(:id).map{ |district| [district.name, district.id, data: { children_path: district_towns_path(district) }] } %>
+      <%= f.select :district_id , district_category, {include_blank: "選択してください"}, class: "form-control select-parent" %>
     </div>
 
     <div class="form-group mt-3">
       <%= f.label :town, "町丁目名" %>
-      <%= f.select :town_id, @towns.map{ |town| [town.name, town.id] }, { include_blank: '選択してください' }, class: "form-control" %>
+      <% town_category = District.try(:towns) || [] %>
+      <% town_options = town_category.map{ |town| [town.name, town.id] } %>
+      <%= f.select :town_id, town_options, { include_blank: '選択してください' }, class: "form-control select-children" %>
     </div>
     <div class="actions text-center mt-5">
       <%= f.submit "診断する", class: "btn btn-outline-dark" %>
     </div>
   <% end %>
 </div>
+
+<script>
+  const replaceSelectOptions = (select, results) => {
+    while(select.firstChild){
+      select.removeChild(select.firstChild);
+    }
+    const firstSelection = document.createElement('option');
+    firstSelection.textContent = '選択してください';
+    select.appendChild(firstSelection);
+    results.forEach((element) => {
+      const option = document.createElement('option');
+      option.setAttribute('value',`${element.id}`); 
+      option.textContent = element.name;
+      select.appendChild(option);
+    });
+  }
+
+  const replaceChildrenOptions = () => {
+    const selectedIndex = document.querySelector('.select-parent').options.selectedIndex;
+    const childrenPath = document.querySelector('.select-parent').options[selectedIndex].dataset.childrenPath;
+    const $selectChildren = document.querySelector('.select-children');
+    if (childrenPath !== 'undefined') {
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', childrenPath, true);
+      xhr.responseType = 'json';
+      xhr.send();
+      xhr.onreadystatechange = function(){
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          let results = xhr.response;
+          replaceSelectOptions($selectChildren, results); 
+        } else {
+          replaceSelectOptions($selectChildren, []);
+        }
+      }
+    }
+  }
+  const selectParent = document.querySelector('.select-parent');
+  selectParent.onchange = () => {
+    replaceChildrenOptions();
+  }
+</script>
