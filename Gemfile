@@ -37,6 +37,9 @@ gem 'mini_magick'
 # Search
 gem 'ransack'
 
+# Rakuten_API
+gem 'rakuten_web_service'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password

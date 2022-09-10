@@ -1,13 +1,12 @@
-<div>
-  <div class="container">
-    <h3>火災危険度：<%= @rank.fire_danger_rank %></h3>
-    <h3>建物崩壊危険度：<%= @rank.building_collapse_rank %></h3>
-    <h3>活動困難度：<%= @rank.active_difficulty_rank %></h3>
-    <h3>types_id：<%= @types_id %></h3>
-  </div>
+<div class="container text-center">
+  <h3>火災危険度：<%= @rank.fire_danger_rank %></h3>
+  <h3>建物崩壊危険度：<%= @rank.building_collapse_rank %></h3>
+  <h3>活動困難度：<%= @rank.active_difficulty_rank %></h3>
+  <h3>types_id：<%= @types_id %></h3>
   <div style="position: relative; height: 60vh; width: 50vh;">
     <canvas id="myChart"></canvas>
-  <div>
+  </div>
+  <%= link_to 'おすすめのグッズを見てみる', goods_path, class: 'btn btn-outline-dark' %>
 </div>
 
 <script>

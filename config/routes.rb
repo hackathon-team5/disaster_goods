@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'goods/index'
   root 'static_pages#top'
 
   get '/search', to: 'diagnosis#search'
@@ -7,4 +8,5 @@ Rails.application.routes.draw do
   resources :districts, only: [] do
     resources :towns, only: :index
   end
+  resources :goods, only: :index
 end
