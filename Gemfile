@@ -37,6 +37,11 @@ gem 'mini_magick'
 # Search
 gem 'ransack'
 
+# heroku対策
+gem 'net-imap'
+gem 'net-pop'
+gem 'net-smtp'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
