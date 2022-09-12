@@ -31,3 +31,12 @@ end
 #         name: row['タイプ名'],
 #         description: row['記述'])
 # end
+
+CSV.foreach('db/goods.csv', headers: true) do |row|
+    Good.create(
+        name: row['グッズ名'],
+        description: row['記述'],
+        item_code: row['item_code'],
+        type_id: row['type_id'])
+end
+
