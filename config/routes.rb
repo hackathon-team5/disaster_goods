@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :districts, only: [] do
     resources :towns, only: :index
   end
+  resources :goods, only: :index
 end
