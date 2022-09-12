@@ -16,7 +16,7 @@ class DiagnosisController < ApplicationController
     # 下２行のメソッドは、app/controller/concerns/common.rbで定義している。
     priority_count = equal_count(danger_list)
     priority_ranks = rank_types(priority_list, priority_count)
-    @types_id = if (priority_count == 1) && (priority_ranks == ['fire'])
+    @type_id = if (priority_count == 1) && (priority_ranks == ['fire'])
                   1
                 elsif (priority_count == 1) && (priority_ranks == ['building'])
                   2
@@ -31,5 +31,7 @@ class DiagnosisController < ApplicationController
                 elsif priority_count == 3
                   7
                 end
+    # type_idに紐づくTypeインスタンスを取得
+    @type = Type.find(@type_id)
   end
 end
