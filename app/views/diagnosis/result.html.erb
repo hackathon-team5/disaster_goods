@@ -3,11 +3,16 @@
     <h3>火災危険度：<%= @rank.fire_danger_rank %></h3>
     <h3>建物崩壊危険度：<%= @rank.building_collapse_rank %></h3>
     <h3>活動困難度：<%= @rank.active_difficulty_rank %></h3>
-    <h3>types_id：<%= @types_id %></h3>
+    <h3>type_id：<%= @type_id %></h3>
+    <h3>お住まいの地域の総合危険度は...<strong class="text-danger">ランク<%= @rank.total_danger_rank %></strong>です。</h3>
+    <h4>特に<strong class="text-danger"><%= @type.name %></strong>の危険度が高いので、必要な防災グッズを準備しましょう！</h4>
   </div>
   <div style="position: relative; height: 60vh; width: 50vh;">
     <canvas id="myChart"></canvas>
-  <div>
+  </div>
+  <div class="actions text-center">
+    <%= link_to "おすすめグッズを見る", goods_path(type_id: @type_id), class: "btn btn-outline-dark" %>
+  </div>
 </div>
 
 <script>
