@@ -35,5 +35,7 @@
 yarn-debug.log*
 .yarn-integrity
 
+.env
+
 # Ignore vendor
 vendor
