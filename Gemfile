@@ -42,6 +42,12 @@ gem 'net-imap'
 gem 'net-pop'
 gem 'net-smtp'
 
+# rakutenAPIの実装
+gem 'rakuten_web_service'
+
+# .envの活用
+gem 'dotenv-rails'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
