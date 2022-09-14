@@ -87,6 +87,10 @@ GEM
     crass (1.0.6)
     debug_inspector (1.1.0)
     digest (3.1.0)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     erubi (1.11.0)
     ffi (1.15.5)
     globalid (1.0.0)
@@ -99,6 +103,7 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    json (2.6.2)
     listen (3.7.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -185,6 +190,8 @@ GEM
       rake (>= 12.2)
       thor (~> 1.0)
     rake (13.0.6)
+    rakuten_web_service (1.13.1)
+      json (~> 2.3)
     ransack (3.2.1)
       activerecord (>= 6.1.5)
       activesupport (>= 6.1.5)
@@ -251,6 +258,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   carrierwave (~> 2.0)
+  dotenv-rails
   jbuilder (~> 2.7)
   listen (~> 3.3)
   mini_magick
@@ -264,6 +272,7 @@ DEPENDENCIES
   rails (= 6.1.5)
   rails-erd
   rails-i18n
+  rakuten_web_service
   ransack
   ruby-graphviz
   sass-rails (>= 6)
