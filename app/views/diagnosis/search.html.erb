@@ -13,7 +13,7 @@
       <%= f.select :town_id, town_options, { include_blank: '選択してください' }, class: "form-control select-children" %>
     </div>
     <div class="actions text-center mt-5">
-      <%= f.submit "診断する", class: "btn btn-outline-dark" %>
+      <%= f.submit "診断する", id: 'search-btn', class: "btn btn-outline-dark disabled" %>
     </div>
   <% end %>
 </div>
@@ -37,7 +37,7 @@
   const replaceChildrenOptions = () => {
     const selectedIndex = document.querySelector('.select-parent').options.selectedIndex;
     const childrenPath = document.querySelector('.select-parent').options[selectedIndex].dataset.childrenPath;
-    const $selectChildren = document.querySelector('.select-children');
+    const selectChildren = document.querySelector('.select-children');
     if (childrenPath !== 'undefined') {
       const xhr = new XMLHttpRequest();
       xhr.open('GET', childrenPath, true);
@@ -46,15 +46,32 @@
       xhr.onreadystatechange = function(){
         if (xhr.readyState == 4 && xhr.status == 200) {
           let results = xhr.response;
-          replaceSelectOptions($selectChildren, results); 
+          replaceSelectOptions(selectChildren, results); 
         } else {
-          replaceSelectOptions($selectChildren, []);
+          replaceSelectOptions(selectChildren, []);
         }
       }
     }
   }
+  
+  const selectButton = () => {
+    const selectedIndex = document.querySelector('.select-children').options.selectedIndex;
+    const searchButton = document.querySelector('#search-btn');
+    if (selectedIndex !== undefined && selectedIndex !== 0) {
+      searchButton.classList.remove('disabled'); 
+    } else {
+      searchButton.classList.add('disabled');
+    }
+  }
+
   const selectParent = document.querySelector('.select-parent');
   selectParent.onchange = () => {
     replaceChildrenOptions();
   }
+
+  const selectChildren = document.querySelector('.select-children');
+  selectChildren.onchange = () => {
+    selectButton();
+  }
+
 </script>
