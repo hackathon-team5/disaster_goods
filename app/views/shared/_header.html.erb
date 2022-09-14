@@ -1,12 +1,9 @@
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffff00;">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-3 d-flex align-items-center">
-        <%= image_tag 'logo.png', size:'50x50' %>
-      </div>
-      <div class="col-3 d-flex align-items-center">
-        <p class="navbar-brand fs-2 lh-1">サイ適くん</p>
-      </div>
-    </div>
+<div class="navbar navbar-expand-lg navbar-light vh-10" style="background-color: #ffff00;">
+  <div class="container-fluid mx-2">
+    <%= link_to root_path, class: "navbar-brand d-flex align-items-center" do %>
+      <%= image_tag 'logo.png', size: "47x47" %>
+      <h2 class="pt-2 mx-2">サイ適くん</h2>
+    <% end %>
   </div>
-</nav>
+</div>
+
