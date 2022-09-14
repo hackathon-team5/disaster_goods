@@ -39,3 +39,4 @@ yarn-debug.log*
 
 # Ignore vendor
 vendor
+Gemfile.lock
