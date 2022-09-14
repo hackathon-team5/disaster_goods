@@ -8,7 +8,10 @@
       <br/>
       <p class="mb-auto"><%= good_info.description %></p>
       <div class="actions">
-        <a href="<%= g['itemUrl'] %>" class="btn btn-danger" target="_blank">楽天市場へ</a>
+        <% if good_info.amazon_link %>
+          <a href="<%= good_info.amazon_link %>" class="btn btn-outline-secondary" target="_blank">Amazonで見る</a>
+        <% end %>
+        <a href="<%= g['itemUrl'] %>" class="btn btn-outline-danger" target="_blank">楽天市場で見る</a>
       </div>
     </div>  
   </div>
