@@ -37,6 +37,7 @@ CSV.foreach('db/goods.csv', headers: true) do |row|
         name: row['グッズ名'],
         description: row['記述'],
         item_code: row['item_code'],
+        amazon_link: row['amazon_link'],
         type_id: row['type_id'])
 end
 
