@@ -40,4 +40,3 @@ CSV.foreach('db/goods.csv', headers: true) do |row|
         amazon_link: row['amazon_link'],
         type_id: row['type_id'])
 end
-
