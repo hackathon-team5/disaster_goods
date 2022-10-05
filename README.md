@@ -4,8 +4,8 @@
 
 # サービス概要
 
-都内居住地の災害危険度を火災・震災・活動困難度でランク毎にチャート化し、
-総合危険度と最も危険度が高かった災害に合わせて、
+都内居住地の災害危険度を火災・震災・活動困難度でランク毎にチャート化し、 
+総合危険度と最も危険度が高かった災害に合わせて、 
 防災グッズを提案するアプリ
 
 # メインのターゲットユーザー
@@ -41,7 +41,7 @@ README〜ER図作成：8/22 〆切
 β版をRUNTEQ内リリース（MVP）：9/11   
 
 # 画面遷移図
-https://www.figma.com/file/88cl1FqC5nEYDbQOOyhlF4/%E3%83%8F%E3%83%83%E3%82%AB%E3%82%BD%E3%83%B3%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3%EF%BC%88%E3%83%89%E3%83%A9%E3%83%95%E3%83%88%EF%BC%89
+[figma](https://www.figma.com/file/88cl1FqC5nEYDbQOOyhlF4/%E3%83%8F%E3%83%83%E3%82%AB%E3%82%BD%E3%83%B3%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3%EF%BC%88%E3%83%89%E3%83%A9%E3%83%95%E3%83%88%EF%BC%89)
 
 # ER図
 [![Image from Gyazo](https://i.gyazo.com/b8fbe87a69e933d033610a3141bf3b47.png)](https://gyazo.com/b8fbe87a69e933d033610a3141bf3b47)
