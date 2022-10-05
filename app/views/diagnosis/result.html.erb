@@ -7,7 +7,13 @@
   <div class="actions text-center">
     <%= link_to "おすすめグッズを見る", goods_path(type_id: @type_id), class: "btn btn-outline-dark" %>
   </div>
+  <h5 class="text-start mx-auto pt-3" style="width:800px;">
+    <li>火災危険度　　・・・火災の発生による延焼の危険性</li>
+    <li>建物倒壊危険度・・・建物倒壊の危険性</li>
+    <li>活動困難危険度・・・道路・公園等の整備状況による災害時の活動の困難さ</li>
+  </h5>
 </div>
+
 
 <script>
 const ctx = document.getElementById('myChart').getContext('2d');
