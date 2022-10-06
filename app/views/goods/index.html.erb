@@ -1,6 +1,5 @@
 <div class="container mt-4 pb-5">
-  <h3 class="text-center"><%= @type.description %></h3>
-  <h3 class="text-center">(※成人1人暮らしを想定)</h3>
+  <h3 class="text-center"><%= @type.description %>(※成人1人暮らしを想定)</h3>
   <br/>
   <% @goods.each do |good_info| %>
     <% good = RakutenWebService::Ichiba::Item.search(itemCode: good_info.item_code) %>
