@@ -1,7 +1,7 @@
 <div class="text-center pt-5">
   <h4>お住まいの地域の総合危険度は...<strong class="text-danger">ランク<%= @rank.total_danger_rank %></strong>です。</h4>
   <h4 class="pb-3">特に<strong class="text-danger"><%= @type.name %></strong>の危険度が高いので、必要な防災グッズを準備しましょう！</h4>
-  <div class="m-auto" style="position: relative; height: 55vh; width: 55vh;">
+  <div class="m-auto" style="position: relative; height: 50vh; width: 55vh;">
     <canvas id="myChart"></canvas>
   </div>
   <ul>
@@ -11,7 +11,7 @@
       <li>活動困難危険度・・・道路・公園等の整備状況による災害時の活動の困難さ</li>
     </h5>
   </ul>
-  <div class="actions text-center">
+  <div class="actions text-center pt-4">
     <%= link_to "おすすめグッズを見る", goods_path(type_id: @type_id), class: "btn btn-outline-dark" %>
   </div>
 </div>
