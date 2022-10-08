@@ -1,0 +1,28 @@
+// トップページに関するスタイル
+@import "variables";
+
+// レスポンシブデザインに対応する際は、ここに書く必要あり
+
+
+@media screen and (min-width: 481px) {
+  /* 768px以上用（タブレット・PC用）の記述 */
+  .middle-wrapper {
+    background-color: $middle-wrapper-color;
+    .contents {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      &:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+      .text-contents {
+        h4 {
+          margin-bottom: 3rem;
+        }
+      }
+    }
+  }
+}

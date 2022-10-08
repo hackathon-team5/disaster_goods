@@ -1,0 +1,10 @@
+// フッターに関するスタイル
+
+@import "variables";
+
+footer {
+  background-color: $yellow-color;
+  .nav-link {
+    color:$font-color
+  }
+}

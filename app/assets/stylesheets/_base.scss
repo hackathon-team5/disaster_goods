@@ -1,0 +1,18 @@
+//Webサイト全体のベーススタイル
+@import 'variables';
+
+body {
+  // フッター固定用
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+  .container {
+    flex: 1;
+  }
+  // /フッター固定用
+}
+
+// リンクタグの装飾を無効化
+a {
+  text-decoration: none;
+}

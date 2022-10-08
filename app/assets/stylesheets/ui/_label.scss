@@ -1,0 +1,11 @@
+@import "variables";
+
+.middle-wrapper-title-style {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  padding: 10px 10px;
+  background-color: $vivid-btn-color;
+  border-radius: 15px;
+  font-weight: bold;
+}

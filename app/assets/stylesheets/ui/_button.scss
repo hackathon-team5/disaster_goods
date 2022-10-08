@@ -1,0 +1,23 @@
+@import "variables";
+
+.main-btn {
+  display: inline-block;
+  padding: .3em 1em;
+  width: auto;
+  height: 55px;
+  text-decoration: none;
+  background-color: $yellow-color;
+  color: black;
+  // border: solid 2px #67c5ff;
+  border-radius: 10px;
+  transition: .4s;
+  text-align: center;
+  vertical-align: auto;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.main-btn:hover {
+  background: #bbcc06;
+  color: white;
+}
