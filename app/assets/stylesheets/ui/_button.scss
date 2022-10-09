@@ -8,7 +8,6 @@
   text-decoration: none;
   background-color: $yellow-color;
   color: black;
-  // border: solid 2px #67c5ff;
   border: none;
   border-radius: 10px;
   transition: .4s;
@@ -16,21 +15,19 @@
   vertical-align: auto;
   font-size: 26px;
   font-weight: bold;
-}
-
-.main-btn:hover {
-  background: #bbcc06;
-  color: white;
-}
-
-.main-btn:disabled {
-  color: #808080;
-  opacity: 0.5;
-  background-color: $yellow-color;
-}
-
-.main-btn[disabled]:hover {
-  color: #808080;
-  opacity: 0.5;
-  background-color: $yellow-color;
+  &:hover {
+    background: #bbcc06;
+    color: white;
+  }
+  // 診断画面のボタン
+  &:disabled {
+    color: #808080;
+    opacity: 0.5;
+    background-color: $yellow-color;
+    &:hover {
+      color: #808080;
+      opacity: 0.5;
+      background-color: $yellow-color;
+    }
+  }
 }
