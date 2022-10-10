@@ -1,7 +1,51 @@
-<div class="container text-center">
-  <%= image_tag "icon.png", size: "300x300" %>
-  <h3 class="mt-2">お住まいの地域に適した防災グッズを提案します</h3>
-  <div class="actions pt-4">
-    <%= link_to "地域の危険度を診断する", search_path, class: "btn btn-outline-dark" %>
+<main class='mb-5'>
+  <div class='container text-center'>
+    <%= image_tag 'icon.png', size: '300x300' %>
+    <h3 class='mt-2'><%= t '.main_title' %></h3>
+    <div class='actions py-5'>
+      <%= link_to t('.btn_txt'), search_path, class: 'main-btn' %>
+    </div>
   </div>
-</div>
+  <div class='middle-wrapper'>
+    <h2 class='fw-bold text-center pt-5'><%= t '.service_overview' %></h2>
+    <p class='text-center mb-5'><%= t '.middle_wrapper_text' %></p>
+    <div class='contents'>
+      <div class='text-contents'>
+        <h4 class='middle-wrapper-title-style'><%= t '.text_contents_title1' %></h4>
+        <p>令和4年9月に実施された東京都都市整備局の調査「地震に関する地域危険度測定調査［第９回］」により、 <br/>評価された地域の危険度を本サービスでは活用しています。<br/><br/>
+        本調査では、全ての町丁目の工学的な基盤において、<br/> 同程度の地震が起きたと仮定し、危険度を測定しています。<br/> 詳しくは<a href='https://www.toshiseibi.metro.tokyo.lg.jp/bosai/chousa_6/home.htm' target='_blank'>都市整備局HP</a>をご覧ください。
+        </p>
+      </div>
+      <div class='image-contents'>
+        <%= image_tag 'LP_chart.png', size: '493x336' %>
+      </div>
+    </div>
+    <div class='contents'>
+      <div class='text-contents'>
+        <h4 class='middle-wrapper-title-style'><%= t '.text_contents_title2' %></h4>
+        <p>危険度に応じて、優先的に購入するグッズを提案します!<br/>
+        まずは1つ購入するアクションを起こしましょう!<br/>
+        ※構成は成人1人暮らしを想定しております。
+        </p>
+      </div>
+      <div class='image-contents'>
+        <%= image_tag 'LP_shopping.png', size: '493x336' %>
+      </div>
+    </div>
+    <div class='contents'>
+      <div class='text-contents'>
+        <h4 class='middle-wrapper-title-style'><%= t '.text_contents_title3' %></h4>
+        <p>M7クラスの首都直下地震が、今後30年以内に70%の確率で起こります。<br/>
+        一つ一つの防災アクションが想定被害を抑え、減災に結びつく可能性を持っています。
+        </p>
+      </div>
+      <div class='image-contents'>
+        <%= image_tag 'LP_nature.png', size: '493x336' %>
+      </div>
+    </div>
+  </div>
+  <div class='message-wrapper text-center mt-5'>
+    <h2 class='mb-3 fw-bold'><%= t '.message_wrapper_text' %></h2>
+    <%= link_to t('.btn_txt'), search_path, class: 'main-btn mt-2' %>
+  </div>
+</main>

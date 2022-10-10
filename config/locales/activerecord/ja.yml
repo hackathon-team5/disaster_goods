@@ -1,0 +1,17 @@
+# モデルは全て activerecord 以下に記述する。
+# これにより、User.model_name.human / User.human_attribute_name({attr_name})で使用可能。
+
+ja:
+  activerecord:
+    models: 
+      district: '区市町'
+      town: '町丁目'
+      type: '危険度'
+      rank: 'ランク'
+      good: 'グッズ'
+    attributes:
+      town:
+      type:
+      rank:
+      good:
+  attributes:

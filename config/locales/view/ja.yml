@@ -1,0 +1,18 @@
+# Viewの表示のみの内容を記載する
+ja:
+  defaults:
+  district:
+  town:
+  type:
+  rank:
+  good:
+  static_pages:
+    top:
+      main_title: "お住まいの地域に適した防災グッズを提案します。"
+      btn_txt: "地域を入力する"
+      service_overview: "サービス概要"
+      middle_wrapper_text: "都内地域の災害危険度に応じて、適切な防災グッズを提案するサービスです。"
+      text_contents_title1: "災害危険度の基準は？"
+      text_contents_title2: "提案するグッズについて"
+      text_contents_title3: "大震災に備えましょう!"
+      message_wrapper_text: "あなたも防災アクションを起こしましょう"

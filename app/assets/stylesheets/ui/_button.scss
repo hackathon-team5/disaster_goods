@@ -1,0 +1,33 @@
+@import "variables";
+
+.main-btn {
+  display: inline-block;
+  padding: .3em 1em;
+  width: auto;
+  height: 55px;
+  text-decoration: none;
+  background-color: $yellow-color;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  transition: .4s;
+  text-align: center;
+  vertical-align: auto;
+  font-size: 26px;
+  font-weight: bold;
+  &:hover {
+    background: #bbcc06;
+    color: white;
+  }
+  // 診断画面のボタン
+  &:disabled {
+    color: #808080;
+    opacity: 0.5;
+    background-color: $yellow-color;
+    &:hover {
+      color: #808080;
+      opacity: 0.5;
+      background-color: $yellow-color;
+    }
+  }
+}
