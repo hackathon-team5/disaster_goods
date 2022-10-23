@@ -1,0 +1,29 @@
+// result画面に関するスタイル
+@import "variables";
+
+.result_area {
+  .chart-area {
+    position: relative;
+  }
+
+  .hazard-discription {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 481px) {
+  .result_area {
+    .chart-area {
+      width: 55vh;
+      height: 48vh;
+    }
+
+    .hazard-discription {
+      width: 800px;
+
+      ul {
+        font-size: 1.25rem;
+      }
+    }
+  }
+}
