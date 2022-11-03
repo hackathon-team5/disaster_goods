@@ -6,6 +6,7 @@ RSpec.describe "Goods", type: :system do
       @first_type = Type.find(5)
       @first_goods = Good.where(type_id: @first_type.id) 
     end
+
     context '渋谷区本町５丁目を検索した場合' do
       it '診断結果画面が適切に表示される' do
         visit search_path
@@ -28,6 +29,7 @@ RSpec.describe "Goods", type: :system do
       @second_type = Type.find(3)
       @second_goods = Good.where(type_id: @second_type.id) 
     end
+
     context '杉並区阿佐谷南３丁目を検索した場合' do
       it '診断結果画面が適切に表示される' do
         visit search_path
@@ -50,6 +52,7 @@ RSpec.describe "Goods", type: :system do
       @third_type = Type.find(5)
       @third_goods = Good.where(type_id: @third_type.id) 
     end
+
     context '世田谷区池尻４丁目を検索した場合' do
       it '診断結果画面が適切に表示される' do
         visit search_path
