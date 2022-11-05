@@ -48,6 +48,13 @@ gem 'rakuten_web_service'
 # .envの活用
 gem 'dotenv-rails'
 
+# ユーザーログイン機能
+gem 'sorcery'
+
+# 管理者画面
+gem 'rails_admin', '~> 3.0'
+gem 'rails_admin-i18n'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
