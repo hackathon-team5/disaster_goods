@@ -108,6 +108,11 @@ GEM
       dotenv (= 2.8.1)
       railties (>= 3.2)
     erubi (1.11.0)
+    factory_bot (6.2.1)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
     faraday (2.6.0)
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
@@ -361,6 +366,7 @@ DEPENDENCIES
   capybara
   carrierwave (~> 2.0)
   dotenv-rails
+  factory_bot_rails
   jbuilder (~> 2.7)
   listen (~> 3.3)
   mini_magick
