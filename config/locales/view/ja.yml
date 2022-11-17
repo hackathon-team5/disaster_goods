@@ -1,6 +1,8 @@
 # Viewの表示のみの内容を記載する
 ja:
   defaults:
+    login: 'ログイン'
+    logout: 'ログアウト'
   district:
   town:
   type:
@@ -16,3 +18,11 @@ ja:
       text_contents_title2: "提案するグッズについて"
       text_contents_title3: "大震災に備えましょう!"
       message_wrapper_text: "あなたも防災アクションを起こしましょう"
+  user_sessions:
+    new:
+      title: 'ログイン'
+    create:
+      success: 'ログインしました'
+      fail: 'ログインに失敗しました'
+    destroy:
+      success: 'ログアウトしました'
