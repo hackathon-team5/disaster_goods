@@ -55,6 +55,9 @@ gem 'sorcery'
 gem 'rails_admin', '~> 3.0'
 gem 'rails_admin-i18n'
 
+# ogp設定
+gem 'meta-tags'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
