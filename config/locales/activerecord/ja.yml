@@ -9,9 +9,20 @@ ja:
       type: '危険度'
       rank: 'ランク'
       good: 'グッズ'
+      user: 'ユーザー'
     attributes:
       town:
       type:
       rank:
       good:
+      user:
+        name: 'ニックネーム'
+        email: 'メールアドレス'
+        password: 'パスワード'
+        password_confirmation: 'パスワード（確認）'
+        crypted_password: '暗号化したパスワード'
+        salt: 'ソルト'
+        role: '権限'
+        created_at: 作成日時
+        updated_at: '更新日時'
   attributes:

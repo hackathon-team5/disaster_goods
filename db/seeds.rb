@@ -40,3 +40,11 @@ CSV.foreach('db/goods.csv', headers: true) do |row|
     amazon_link: row['amazon_link'],
     type_id: row['type_id'])
 end
+
+User.create(
+  name: "管理者ユーザー", 
+  email: "saitekikunn_admin@example.com",
+  password: 'saitekikunn',
+  password_confirmation: 'saitekikunn',
+  role: 'admin'
+)
