@@ -7,6 +7,8 @@ class DiagnosisController < ApplicationController
   end
 
   def result
+    @district = District.find(params[:district_id])
+    @town = Town.find(params[:town_id])
     @rank = Rank.find_by(town_id: params[:town_id])
     @fire_danger_rank = @rank.fire_danger_rank.to_json.html_safe
     @building_collapse_rank = @rank.building_collapse_rank.to_json.html_safe
