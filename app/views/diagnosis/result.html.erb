@@ -1,29 +1,76 @@
-<div class="result_area text-center pt-5">
-  <h4>お住まいの地域の総合危険度は...<strong class="text-danger">ランク<%= @rank.total_danger_rank %></strong>です。</h4>
-  <h4 class="pb-3">特に<strong class="text-danger"><%= @type.name %></strong>の危険度が高いので、必要な防災グッズを準備しましょう！</h4>
-  <div class="chart-area m-auto">
+<div class="result_area pt-5">
+  <div class="text-center">
+    <h4><strong class="text-danger"><%= @district.name  %> <%= @town.name %></strong>の総合危険度は<strong class="text-danger">ランク<%= @rank.total_danger_rank %></strong>です。</h4>
+    <% if @type.id == 7 && @rank.total_danger_rank == 1 %>
+      <h4 class="pb-3"><strong class="text-danger">全てのランクが最も低く安全</strong>です。有事に備えて必要な防災グッズを準備しましょう！</h4>
+    <% else %>
+      <h4 class="pb-3"><strong class="text-danger"><%= @type.name %></strong>の危険度が高いので、必要な防災グッズを準備しましょう！</h4>
+    <% end %>
+  </div>
+  <div class="chart-area m-auto mb-4">
     <canvas id="myChart"></canvas>
   </div>
-
-  <div class="accordion" id="hazard">
-  <div class="accordion-item">
-    <h1 class="accordion-header" id="headingTwo">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-        災害危険度とは？
-      </button>
-    </h1>
-    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#hazard">
-      <div class="accordion-body">
-      <div class="hazard-discription mx-auto">
-        <ul class="text-start">
-          <li>火災危険度　　・・・火災の発生による延焼の危険性</li>
-          <li>建物倒壊危険度・・・建物倒壊の危険性</li>
-          <li>活動困難危険度・・・道路・公園等の整備状況による災害時の活動の困難さ</li>
-        </ul>
+  <div class="container mb-5">
+    <div class="accordion" id="hazard">
+      <h4 class="text-left mb-3">災害危険度とは？</h4>
+      <div class="accordion-item">
+        <h1 class="accordion-header" id="flush-headingOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          火災危険度について
+          </button>
+        </h1>
       </div>
+      <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
+        <div class="accordion-body">
+          <div class="hazard-discription">
+            <p>火災危険度の説明を記載</p>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h1 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          建物倒壊危険度について
+          </button>
+        </h1>
+      </div>
+      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
+        <div class="accordion-body">
+          <div class="hazard-discription">
+            <p>建物倒壊危険度の説明を記載</p>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h1 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          活動困難危険度について
+          </button>
+        </h1>
+      </div>
+      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
+        <div class="accordion-body">
+          <div class="hazard-discription">
+            <p>活動困難危険度の説明を記載</p>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h1 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          総合危険度について
+          </button>
+        </h1>
+      </div>
+      <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour">
+        <div class="accordion-body">
+          <div class="hazard-discription">
+            <p>総合危険度の説明を記載</p>
+          </div>
+        </div>
       </div>
     </div>
-
+  </div>
   <div class="actions text-center pt-4 mb-5">
     <%= link_to "おすすめグッズを見る", goods_path(type_id: @type_id), class: "main-btn" %>
   </div>
