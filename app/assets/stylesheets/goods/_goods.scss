@@ -1,0 +1,10 @@
+.goods {
+  width: 390px;
+  height: 390px;
+}
+@media screen and (max-width: 500px) {
+  .goods {
+    width: 350px;
+    height: 350px;
+  }
+}
