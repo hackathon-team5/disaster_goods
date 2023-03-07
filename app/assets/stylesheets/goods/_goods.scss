@@ -1,0 +1,16 @@
+.goods {
+  width: 350px;
+  height: 350px;
+}
+@media screen and (min-width: 500px) {
+  .goods {
+    width: 560px;
+    height: 560px;
+  }
+}
+@media screen and (min-width: 991px) {
+  .goods {
+    width: 380px;
+    height: 380px;
+  }
+}
