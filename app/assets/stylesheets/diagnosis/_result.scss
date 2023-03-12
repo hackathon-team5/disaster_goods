@@ -4,18 +4,53 @@
 .result_area {
   .chart-area {
     position: relative;
+    height: 50vh;
+    padding: none;
   }
 
   .hazard-discription {
     width: 100%;
   }
+
+  .rank_main {
+    display: flex;
+    flex-direction: column;
+    .rank_instruction {
+      width: 100%;
+      padding: 5px;
+    }
+    .rank_image {
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+  
+  .description {
+    padding: 0 10px;
+    font-size: 20px;
+    text-align: left;
+  }
+  
+  .image_size {
+    max-width: 100%;
+  }
+  
+  .more-info {
+    font-size: 12px;
+  }
+  
+  .chart-area {
+    width: 80%;
+  }
 }
+
 
 @media screen and (min-width: 481px) {
   .result_area {
     .chart-area {
-      width: 55vh;
-      height: 48vh;
+      width: 65vh;
+      height: 50vh;
     }
 
     .hazard-discription {
@@ -25,5 +60,26 @@
         font-size: 1.25rem;
       }
     }
+
+    .description {
+      font-size: 25px;
+      text-align: center;
+    }
+  
+    .rank_main {
+      display: flex;
+      flex-direction: row;
+      .rank_instruction {
+        width: 50%;
+        size: 13px;
+        padding: 5px;
+      }
+      .rank_image {
+        width: 50%;
+        margin: 0 auto;
+        text-align: center;
+      }
+    }
   }
+
 }

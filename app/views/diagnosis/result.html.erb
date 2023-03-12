@@ -1,10 +1,10 @@
 <div class="result_area pt-5">
   <div class="text-center">
-    <h4><strong class="text-danger"><%= @district.name  %> <%= @town.name %></strong>の総合危険度は<strong class="text-danger">ランク<%= @rank.total_danger_rank %></strong>です。</h4>
+    <p class=" description"><strong class="text-danger"><%= @district.name  %> <%= @town.name %></strong>の総合危険度は<strong class="text-danger">ランク<%= @rank.total_danger_rank %></strong>です。</p>
     <% if @type.id == 7 && @rank.total_danger_rank == 1 %>
-      <h4 class="pb-3"><strong class="text-danger">全てのランクが最も低く安全</strong>です。有事に備えて必要な防災グッズを準備しましょう！</h4>
+      <p class="description pb-3"><strong class="text-danger">全てのランクが最も低く安全</strong>です。有事に備えて必要な防災グッズを準備しましょう！</p>
     <% else %>
-      <h4 class="pb-3"><strong class="text-danger"><%= @type.name %></strong>の危険度が高いので、必要な防災グッズを準備しましょう！</h4>
+      <p class="description pb-3"><strong class="text-danger"><%= @type.name %></strong>の危険度が高いので、必要な防災グッズを準備しましょう！</p>
     <% end %>
   </div>
   <div class="chart-area m-auto mb-4">
@@ -13,7 +13,7 @@
   <div class="container mb-5">
     <div class="accordion" id="hazard">
       <h4 class="text-left">災害危険度とは？</h4>
-      <small>詳細な情報は<a href="https://www.toshiseibi.metro.tokyo.lg.jp/bosai/chousa_6/home.htm">地震に関する地域危険度測定調査</a>（都市整備局HP）をご覧ください</small>
+      <small class="more-info">詳細な情報は<a href="https://www.toshiseibi.metro.tokyo.lg.jp/bosai/chousa_6/home.htm">地震に関する地域危険度測定調査</a>（都市整備局HP）をご覧ください</small>
       <div class="accordion-item">
         <h1 class="accordion-header" id="flush-headingOne">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
@@ -30,16 +30,16 @@
               火災危険度は、<strong>出火の危険性</strong>と<strong>延焼の危険性を基に測定</strong>しています。
             </p>
             <br />
-            <div class="d-flex">
-              <div class="w-50">
+            <div class="rank_main">
+              <div class="rank_instruction">
                 <h5>①出火の危険性</h5>
                 <p>地震の発生により火災が生じる危険性について、<strong>世帯や火災器具等の使用状況や、出火率、地盤の揺れやすさなど</strong>から測定したものです。</p>
                 <br />
                 <h5>②延焼の危険性</h5>
                 <p>火災が発生した場合の延焼火災の危険性について、延焼時間を12時間と設定し、<strong>建物構造や隣接する建物との間隔などから測定</strong>したものです。</p>
               </div>
-              <div class="w-40 m-auto text-center">
-                <%= image_tag 'FireRank.png', width: '500' %>
+              <div class="item_image">
+                <%= image_tag 'FireRank.png', class: 'image_size' %>
               </div>
             </div>
           </div>
@@ -61,8 +61,8 @@
               建物倒壊危険度は、<strong>町丁目内の地盤特性</strong>と<strong>建物特性により測定</strong>しています。
             </p>
             <br />
-            <div class="d-flex">
-              <div class="w-50">
+            <div class="rank_main">
+              <div class="rank_instruction">
                 <h5>①地盤特性</h5>
                 <p>
                 建物倒壊の危険性は、<strong>地盤の特性</strong>による影響を受けます。<br />
@@ -72,8 +72,8 @@
                 <h5>②建物特性</h5>
                 <p>建物倒壊の危険性は、建物の特性による影響を受けます。建物は、<strong>耐震性が低いほど倒壊の危険性が高く</strong>なります。</p>
               </div>
-              <div class="w-40 m-auto text-center">
-                <%= image_tag 'BuildingCollapseRank.png', width: '500' %>
+              <div class="rank_image">
+                <%= image_tag 'BuildingCollapseRank.png', class: 'image_size' %>
               </div>
             </div>
           </div>
@@ -91,21 +91,21 @@
           <div class="container">
             <h5>活動困難危険度とは</h5>
             <p>
-              地震により建物が倒壊したり、火災が発生した際、<strong>危険地域からの避難や消火・救助活動のしやすさ（困難さ）が、被害の大きさに影響</strong>います。<br />
+              地震により建物が倒壊したり、火災が発生した際、<strong>危険地域からの避難や消火・救助活動のしやすさ（困難さ）が、被害の大きさに影響</strong>します。<br />
               このような活動のしやすさ（困難さ）を、災害時活動に有効な空間量や、道路ネットワーク密度といった道路基板などの整備状況から評価した指標が<strong>「災害時活動困難係数」</strong>です。<br />
               災害時活動困難度は、<strong>活動有効空間不足率</strong>と<strong>道路ネットワーク密度不足率</strong>から算定しています。
             </p> 
             <br />
-            <div class="d-flex">
-              <div class="w-50">
+            <div class="rank_main">
+              <div class="rank_instruction">
                 <h5>①活動有効空間不足率</h5>
                 <p><strong>避難や、消火・救助・救援など災害時活動に有効な空間の、町丁目名面積に対する不足率</strong>を指します。</p>
                 <br />
                 <h5>②道路ネットワーク密度不足率</h5>
                 <p>避難や、消火・救助・救援など災害時活動のために<strong>広幅員道路と被災地をつなぐ、地域レベルの道路ネットワークの不足率を表す指標</strong>です。</p>
               </div>
-              <div class="w-40 m-auto text-center">
-                <%= image_tag 'ActiveDifficultyRank.png', width: '500' %>
+              <div class="rank_image">
+                <%= image_tag 'ActiveDifficultyRank.png', class: 'image_size' %>
               </div>
             </div>
           </div>
@@ -128,7 +128,7 @@
             </p>
             <br />
             <div class="container m-auto text-center">
-              <%= image_tag 'TotalDangerRank.png', width: '700' %>
+              <%= image_tag 'TotalDangerRank.png', class: 'image_size' %>
             </div>
           </div>
         </div>
@@ -165,7 +165,7 @@
         legend: {
           labels: {
             font: {
-              size: 18
+              size: 14
             }
           }
         }
@@ -194,7 +194,7 @@
           pointLabels: {
             color: 'black',
             font: {
-              size: 16
+              size: 14
             }
           },
         },
