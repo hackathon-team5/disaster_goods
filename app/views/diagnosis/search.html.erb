@@ -10,7 +10,7 @@
       <%= f.label :town, "町丁目名" %>
       <% town_category = District.try(:towns) || [] %>
       <% town_options = town_category.map{ |town| [town.name, town.id] } %>
-      <%= f.select :town_id, town_options, { include_blank: '選択してください' }, class: "form-control select-children" %>
+      <%= f.select :town_id, town_options, { include_blank: '選択してください' }, class: "form-control select-children", disabled: true %>
     </div>
     <div class="actions text-center mt-5">
       <%= f.submit "診断する", id: 'search-btn', class: "main-btn", disabled: true %>
@@ -47,6 +47,7 @@
         if (xhr.readyState == 4 && xhr.status == 200) {
           let results = xhr.response;
           replaceSelectOptions(selectChildren, results); 
+          selectChildren.removeAttribute('disabled');
         } else {
           replaceSelectOptions(selectChildren, []);
         }
