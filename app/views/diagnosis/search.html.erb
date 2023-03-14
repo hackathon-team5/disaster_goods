@@ -50,12 +50,11 @@
           selectChildren.removeAttribute('disabled');
         } else {
           replaceSelectOptions(selectChildren, []);
-          selectChildren.setAttribute('disabled', true);
         }
       }
     }
   }
-  
+
   const selectButton = () => {
     const selectedIndex = document.querySelector('.select-children').options.selectedIndex;
     const searchButton = document.querySelector('#search-btn');
@@ -68,6 +67,7 @@
 
   const selectParent = document.querySelector('.select-parent');
   selectParent.onchange = () => {
+    selectChildren.setAttribute('disabled', true);
     replaceChildrenOptions();
   }
 
