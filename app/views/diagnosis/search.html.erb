@@ -50,6 +50,7 @@
           selectChildren.removeAttribute('disabled');
         } else {
           replaceSelectOptions(selectChildren, []);
+          selectChildren.setAttribute('disabled', true);
         }
       }
     }
