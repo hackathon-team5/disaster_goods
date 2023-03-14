@@ -5,6 +5,7 @@ module ApplicationHelper
       title: "タイトル",
       reverse: true,
       separator: "|",
+      canonical: request.original_url,
       og: default_og,
       twitter: default_twittter_card
     }
@@ -24,7 +25,7 @@ module ApplicationHelper
   def default_twittter_card
     {
       card: "summary_large_image",
-      site: ""
+      site: "@saitekikun1"
     }
   end
 
