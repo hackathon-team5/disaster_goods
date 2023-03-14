@@ -12,6 +12,10 @@
     width: 100%;
   }
 
+  .rank-chart {
+    width: 100%;
+  }
+
   .rank_main {
     display: flex;
     flex-direction: column;
@@ -25,23 +29,19 @@
       text-align: center;
     }
   }
-  
+
   .description {
     padding: 0 10px;
     font-size: 20px;
     text-align: left;
   }
-  
+
   .image_size {
     max-width: 100%;
   }
-  
+
   .more-info {
     font-size: 12px;
-  }
-  
-  .chart-area {
-    width: 80%;
   }
 }
 
@@ -60,12 +60,15 @@
         font-size: 1.25rem;
       }
     }
+    .rank-chart {
+      width: 60%;
+    }
 
     .description {
       font-size: 25px;
       text-align: center;
     }
-  
+
     .rank_main {
       display: flex;
       flex-direction: row;
