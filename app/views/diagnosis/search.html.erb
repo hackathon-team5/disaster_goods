@@ -58,6 +58,7 @@
   const selectButton = () => {
     const selectedIndex = document.querySelector('.select-children').options.selectedIndex;
     const searchButton = document.querySelector('#search-btn');
+    console.log(selectedIndex)
     if (selectedIndex !== undefined && selectedIndex !== 0) {
       searchButton.removeAttribute('disabled'); 
     } else {
@@ -66,9 +67,11 @@
   }
 
   const selectParent = document.querySelector('.select-parent');
+  const searchButton = document.querySelector('#search-btn');
   selectParent.onchange = () => {
     selectChildren.setAttribute('disabled', true);
     replaceChildrenOptions();
+    searchButton.setAttribute('disabled', true);
   }
 
   const selectChildren = document.querySelector('.select-children');
