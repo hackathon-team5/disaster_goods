@@ -11,6 +11,16 @@
     <canvas id="myChart"></canvas>
   </div>
   <div class="container mb-5">
+    <div class='m-auto mt-5 mb-5 text-center'>
+      <small>総合危険度の分布</small>
+      <div class='w-100 mb-5'>
+        <%= image_tag 'RankChart.png', class: 'rank-chart' %>
+      </div>
+      <small class='float-left'>都内全域の総合危険度分布図</small>
+      <div class='w-100'>
+        <%= image_tag 'RankMap.png', width: '80%' %>
+      </div>
+    </div>
     <div class="accordion" id="hazard">
       <h4 class="text-left">災害危険度とは？</h4>
       <small class="more-info">詳細な情報は<a href="https://www.toshiseibi.metro.tokyo.lg.jp/bosai/chousa_6/home.htm">地震に関する地域危険度測定調査</a>（都市整備局HP）をご覧ください</small>
