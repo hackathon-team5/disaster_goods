@@ -66,9 +66,11 @@
   }
 
   const selectParent = document.querySelector('.select-parent');
+  const searchButton = document.querySelector('#search-btn');
   selectParent.onchange = () => {
     selectChildren.setAttribute('disabled', true);
     replaceChildrenOptions();
+    searchButton.setAttribute('disabled', true);
   }
 
   const selectChildren = document.querySelector('.select-children');
