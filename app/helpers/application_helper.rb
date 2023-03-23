@@ -1,7 +1,7 @@
 module ApplicationHelper
   def default_meta_tags
     {
-      site: "最適くん",
+      site: "サイ適くん",
       title: "タイトル",
       reverse: true,
       separator: "|",
