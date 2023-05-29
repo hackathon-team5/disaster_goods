@@ -18,11 +18,11 @@ ENV RAILS_LOG_TO_STDOUT true
 RUN mkdir /$APP_NAME
 WORKDIR /$APP_NAME
 
-RUN curl -sL https://deb.nodesource.com/setup_${NODE_VERSION}.17 | bash - \
+RUN curl -sL https://deb.nodesource.com/setup_${NODE_VERSION}.x | bash - \
 && wget --quiet -O - /tmp/pubkey.gpg https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
 && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
 && apt-get update -qq \
-&& apt-get install -y build-essential nodejs yarn
+&& apt-get install -y build-essential nodejs yarn npm && npm install n -g && n 16.17.0
 
 RUN gem install bundler:$BUNDLER_VERSION
 
