@@ -41,7 +41,7 @@ CSV.foreach('db/goods.csv', headers: true) do |row|
     type_id: row['type_id'])
 end
 
-User.create(
+User.find_or_create_by(
   name: "管理者ユーザー", 
   email: "saitekikunn_admin@example.com",
   password: 'saitekikunn',

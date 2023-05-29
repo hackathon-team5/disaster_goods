@@ -81,7 +81,7 @@ test:
 #
 production:
   <<: *default
-  database: disaster_goods_production
-  username: disaster_goods
+  database: cli8hyfbg00c39tp5fd71hz5e
+  username: cli8hyfbf00c19tp5hflm0ur7
   password: <%= ENV['DISASTER_GOODS_DATABASE_PASSWORD'] %>
   url: <%= ENV['DATABASE_URL'] %>
