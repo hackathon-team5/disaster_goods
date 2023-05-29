@@ -1,9 +1,10 @@
-$fa-font-path: '@fortawesome/fontawesome-free/webfonts';
-@import '@fortawesome/fontawesome-free/scss/fontawesome';
-@import '@fortawesome/fontawesome-free/scss/solid';
-@import '@fortawesome/fontawesome-free/scss/regular';
-@import '@fortawesome/fontawesome-free/scss/brands';
-@import '@fortawesome/fontawesome-free/scss/v4-shims';
+// gemをインストールしておらずmagia移行時にエラー発生。２行目の環境変数も使用している形跡がないため、一旦コメントアウト。
+// $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
+// @import '@fortawesome/fontawesome-free/scss/fontawesome';
+// @import '@fortawesome/fontawesome-free/scss/solid';
+// @import '@fortawesome/fontawesome-free/scss/regular';
+// @import '@fortawesome/fontawesome-free/scss/brands';
+// @import '@fortawesome/fontawesome-free/scss/v4-shims';
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 @import 'styles';
 * { 
