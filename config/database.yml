@@ -83,6 +83,5 @@ production:
   <<: *default
   database: cli8hyfbg00c39tp5fd71hz5e
   username: cli8hyfbf00c19tp5hflm0ur7
-  host: <%= ENV['DATABASE_HOST'] %>
   password: <%= ENV['DISASTER_GOODS_DATABASE_PASSWORD'] %>
   url: <%= ENV['DATABASE_URL'] %>

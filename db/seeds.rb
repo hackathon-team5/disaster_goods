@@ -41,10 +41,10 @@ CSV.foreach('db/goods.csv', headers: true) do |row|
     type_id: row['type_id'])
 end
 
-User.find_or_create_by(
-  name: "管理者ユーザー", 
-  email: "saitekikunn_admin@example.com",
-  password: 'saitekikunn',
-  password_confirmation: 'saitekikunn',
-  role: 'admin'
-)
+# User.find_or_create_by(
+#   name: "管理者ユーザー", 
+#   email: "saitekikunn_admin@example.com",
+#   password: 'saitekikunn',
+#   password_confirmation: 'saitekikunn',
+#   role: 'admin'
+# )
