@@ -84,3 +84,4 @@ production:
   database: disaster_goods_production
   username: disaster_goods
   password: <%= ENV['DISASTER_GOODS_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
